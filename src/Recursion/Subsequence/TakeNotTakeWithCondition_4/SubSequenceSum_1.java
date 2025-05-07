@@ -1,6 +1,6 @@
 package Recursion.Subsequence.TakeNotTakeWithCondition_4;
 
-public class SubSequenceSum {
+public class SubSequenceSum_1 {
     public static boolean checkSubsequenceSum(int N, int[] arr, int K) {
         // code here
         return subSeqSum(arr,0,K,0);
