@@ -20,6 +20,7 @@ public class NQeen_2 {
             allCombinations.add(convertBoardToString(board));
             return;
         }
+        //place the queen row by row
         for(int i=0;i<board[row].length;i++){
             if(canPlaceQueen(row,i,board)){
                 board[row][i] = 1;
