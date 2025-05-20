@@ -36,7 +36,7 @@ i:registerDoc -> Curious-> Cardiologist
 o: Welcome Dr. Curious !!
 i: markDocAvail: Curious 9:30-10:30
 o: Sorry Dr. Curious slots are 30 mins only
-i: markDocAvail: Curious 9:30-10:30, 12:30-13:00, 16:00-16:30
+i: markDocAvail: Curious 9:30-10:00, 12:30-13:00, 16:00-16:30
 o: Done Doc!
 i:registerDoc -> Dreadful-> Dermatologist
 o: Welcome Dr. Dreadful !!
