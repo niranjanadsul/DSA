@@ -1,20 +1,26 @@
 package Flipkart.MachineCoding.Service;
 
+import Flipkart.MachineCoding.Entity.Patient;
+
 import java.util.HashMap;
+import java.util.Map;
 
 public class PatientService {
-    /*HashMap<String, User> users;
+    HashMap<String, Patient> patients;
 
     public PatientService() {
-        this.users = new HashMap<>();
+        this.patients = new HashMap<>();
     }
 
-    public User registerPatient(String name){
-        if(this.users.containsKey(name))
-            return this.users.get(name);
-        User u = new User();
-        u.setName(name);
-        this.users.put(name,u);
-        return u;
-    }*/
+    public Patient registerPatient(String name){
+        if(this.patients.containsKey(name))
+            return this.patients.get(name);
+        Patient p = new Patient(name);
+        this.patients.put(name,p);
+        return p;
+    }
+
+    public Map<String, Patient> getPatients(){
+        return this.patients;
+    }
 }

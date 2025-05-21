@@ -9,11 +9,13 @@ public class Slot {
     String startTime;
     String endTime;
     boolean isBooked;
+    Queue<Integer> patientWaitingQueue;//contains booking id
 
     public Slot(String startTime, String endTime) {
         this.endTime = endTime;
         this.startTime = startTime;
         this.isBooked=false;
+        this.patientWaitingQueue = new LinkedList<>();
     }
 
     public String getStartTime() {
@@ -47,5 +49,13 @@ public class Slot {
     public static int getTimeInMinute(String time){
         String[] s = time.split(":");
         return Integer.parseInt(s[0])*60+Integer.parseInt(s[1]);
+    }
+
+    public Queue<Integer> getPatientWaitingQueue() {
+        return patientWaitingQueue;
+    }
+
+    public void setPatientWaitingQueue(Queue<Integer> patientWaitingQueue) {
+        this.patientWaitingQueue = patientWaitingQueue;
     }
 }

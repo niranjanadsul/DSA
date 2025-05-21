@@ -10,12 +10,20 @@ import java.util.List;
 import java.util.Map;
 
 public class DoctorService {
-    HashMap<String, Doctor> doctors;
-    SlotRanker slotRanker;
+    private HashMap<String, Doctor> doctors;
+    private SlotRanker slotRanker;
 
     public DoctorService(SlotRanker  slotRanker) {
         this.doctors = new HashMap<>();
         this.slotRanker=slotRanker;
+    }
+
+    public HashMap<String, Doctor> getDoctors() {
+        return doctors;
+    }
+
+    public SlotRanker getSlotRanker() {
+        return slotRanker;
     }
 
     public Doctor registerDoctor(String name, String speciality){

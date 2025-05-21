@@ -1,7 +1,10 @@
 package Flipkart.MachineCoding.Entity;
 
+import Flipkart.MachineCoding.Enums.BookingType;
+
 public class Booking {
     int id;
+    BookingType bookingType;
     String patientName;
     String doctorName;
     Slot slot;
@@ -11,6 +14,14 @@ public class Booking {
         this.patientName = patientName;
         this.doctorName = doctorName;
         this.slot = slot;
+    }
+
+    public BookingType getBookingType() {
+        return bookingType;
+    }
+
+    public void setBookingType(BookingType bookingType) {
+        this.bookingType = bookingType;
     }
 
     public int getId() {

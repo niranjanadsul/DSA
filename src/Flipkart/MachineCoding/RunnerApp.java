@@ -1,7 +1,10 @@
 package Flipkart.MachineCoding;
 
+import Flipkart.MachineCoding.Entity.Booking;
 import Flipkart.MachineCoding.Entity.Doctor;
+import Flipkart.MachineCoding.Service.BookingService;
 import Flipkart.MachineCoding.Service.DoctorService;
+import Flipkart.MachineCoding.Service.PatientService;
 import Flipkart.MachineCoding.Strategies.Implementations.RankSlotsByStartTime;
 import Flipkart.MachineCoding.Validation.SlotValidator;
 import Flipkart.MachineCoding.Validation.implementation.HalfHourlySlotValidator;
@@ -14,10 +17,13 @@ import java.util.Map;
 public class RunnerApp {
     private SlotValidator slotValidator;
     private DoctorService doctorService;
+    private BookingService bookingService;
 
-    public RunnerApp(SlotValidator slotValidator, DoctorService doctorService){
+    public RunnerApp(SlotValidator slotValidator, DoctorService doctorService,
+                     BookingService bookingService){
         this.slotValidator = slotValidator;
         this.doctorService = doctorService;
+        this.bookingService = bookingService;
     }
 
     public SlotValidator getSlotValidator() {
@@ -71,9 +77,23 @@ public class RunnerApp {
         }
     }
 
+    public void bookAppointment(String p, String d, String st){
+        Booking booking = this.bookingService.bookAppointment(p,d,st);
+        if(booking!=null){
+            System.out.println("Booking id: "+booking.getId());
+        }
+    }
+
+    public void cancelBooking(int id){
+        this.bookingService.cancelBooking(id);
+    }
+
     public static void main(String[] args) {
+        DoctorService doctorService1 = new DoctorService(new RankSlotsByStartTime());
+        PatientService patientService1 = new PatientService();
         RunnerApp runnerApp = new RunnerApp(new HalfHourlySlotValidator(),
-                new DoctorService(new RankSlotsByStartTime()));
+                doctorService1,
+                new BookingService(doctorService1,patientService1));
 
         runnerApp.registerDoctor("Curious","Cardiologist");
         runnerApp.updateDoctorAvailability("Curious",Arrays.asList("9:30-10:30"));
@@ -83,6 +103,20 @@ public class RunnerApp {
         runnerApp.registerDoctor("Dreadful","Dermatologist");
         runnerApp.updateDoctorAvailability("Dreadful",
                 Arrays.asList("9:30-10:00", "12:30-13:00", "16:00-16:30"));
+
+        runnerApp.displayAvailableSlotsBySpeciality("Cardiologist");
+
+        runnerApp.bookAppointment("PatientA", "Curious", "12:30");
+
+        runnerApp.displayAvailableSlotsBySpeciality("Cardiologist");
+
+        runnerApp.displayAvailableSlotsBySpeciality("Dermatologist");
+
+        runnerApp.bookAppointment("PatientA", "Dreadful", "12:30");
+
+        runnerApp.bookAppointment("PatientB", "Curious", "12:30");
+
+        runnerApp.cancelBooking(1234);
 
         runnerApp.displayAvailableSlotsBySpeciality("Cardiologist");
         System.out.println();
