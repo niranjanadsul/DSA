@@ -88,6 +88,19 @@ public class RunnerApp {
         this.bookingService.cancelBooking(id);
     }
 
+    public void displayAllBookingsOfDoctor(String docName){
+        this.bookingService.displayAllDoctorAppointments(docName);
+    }
+
+    public void displayAllBookingsOfPatient(String docName){
+        this.bookingService.displayAllPatientAppointments(docName);
+    }
+
+    public void getTrendingDoctor(){
+        System.out.println("Dr. "+this.bookingService.getTrendingDoctor()+
+                " trending doctor");
+    }
+
     public static void main(String[] args) {
         DoctorService doctorService1 = new DoctorService(new RankSlotsByStartTime());
         PatientService patientService1 = new PatientService();
@@ -99,26 +112,75 @@ public class RunnerApp {
         runnerApp.updateDoctorAvailability("Curious",Arrays.asList("9:30-10:30"));
         runnerApp.updateDoctorAvailability("Curious",
                 Arrays.asList("9:30-10:00", "12:30-13:00", "16:00-16:30"));
+        System.out.println("################################################");
 
         runnerApp.registerDoctor("Dreadful","Dermatologist");
         runnerApp.updateDoctorAvailability("Dreadful",
                 Arrays.asList("9:30-10:00", "12:30-13:00", "16:00-16:30"));
+        System.out.println("################################################");
 
         runnerApp.displayAvailableSlotsBySpeciality("Cardiologist");
+        System.out.println("################################################");
 
         runnerApp.bookAppointment("PatientA", "Curious", "12:30");
+        System.out.println("################################################");
 
         runnerApp.displayAvailableSlotsBySpeciality("Cardiologist");
+        System.out.println("################################################");
 
         runnerApp.displayAvailableSlotsBySpeciality("Dermatologist");
+        System.out.println("################################################");
 
         runnerApp.bookAppointment("PatientA", "Dreadful", "12:30");
+        System.out.println("################################################");
 
         runnerApp.bookAppointment("PatientB", "Curious", "12:30");
+        System.out.println("################################################");
 
         runnerApp.cancelBooking(1234);
+        System.out.println("################################################");
 
         runnerApp.displayAvailableSlotsBySpeciality("Cardiologist");
+        System.out.println("################################################");
+
+        runnerApp.bookAppointment("PatientB", "Curious", "12:30");
+        System.out.println("################################################");
+
+        runnerApp.displayAvailableSlotsBySpeciality("Cardiologist");
+        System.out.println("################################################");
+
+        runnerApp.registerDoctor("Daring","Dermatologist");
+        runnerApp.updateDoctorAvailability("Daring",
+                Arrays.asList("11:30-12:00", "14:00-14:30"));
+        System.out.println("################################################");
+
+        runnerApp.displayAvailableSlotsBySpeciality("Dermatologist");
+        System.out.println("################################################");
+
+        runnerApp.displayAllBookingsOfDoctor("Curious");
+        System.out.println("################################################");
+
+        runnerApp.displayAllBookingsOfDoctor("Daring");
+        System.out.println("################################################");
+
+        runnerApp.displayAllBookingsOfDoctor("Dreadful");
+        System.out.println("################################################");
+
+        runnerApp.displayAllBookingsOfPatient("PatientA");
+        System.out.println("################################################");
+        runnerApp.displayAllBookingsOfPatient("PatientB");
+        System.out.println("################################################");
+
+        runnerApp.getTrendingDoctor();
+        System.out.println("################################################");
+
+        runnerApp.bookAppointment("PatientC", "Dreadful", "9:30");
+        System.out.println("################################################");
+        runnerApp.bookAppointment("PatientD", "Dreadful", "12:30");
+        System.out.println("################################################");
+        runnerApp.getTrendingDoctor();
+        System.out.println("################################################");
+
         System.out.println();
     }
 }
