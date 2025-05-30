@@ -64,6 +64,7 @@ public class SudokuSolver_4 {
                 if(solve(index+1,board,uniqueColumns,uniqueBox,uniqueRows,emptyPositions)){
                     return true;
                 }
+                //this is example of backtracking where we reset the value of the cell
                 board[i][j] = '.';
                 uniqueRows.get(i).remove(c);
                 uniqueColumns.get(j).remove(c);
