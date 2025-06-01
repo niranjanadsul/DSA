@@ -19,11 +19,33 @@ public class FrogJump_2 {
         return cost[cost.length-1];
     }
 
+    int minCost(int[] height, int k) {
+        // code here
+        int[] cost = new int[height.length];
+        cost[0] = 0;
+        int i=1;
+        while(i<height.length){
+            int j=1;
+            int min = Integer.MAX_VALUE;
+            while(i-j>=0 && j<=k){
+                min = Math.min(min,cost[i-j]+Math.abs(height[i-j]-height[i]));
+                j++;
+            }
+            cost[i]=min;
+            i++;
+        }
+        return cost[cost.length-1];
+    }
+
     public static void main(String[] args) {
         FrogJump_2 frogJump2= new FrogJump_2();
-        int cost = frogJump2.minCost(new int[]{20, 30, 40, 20});
+        int cost = frogJump2.minCost(new int[]{20, 30, 40, 20},2);//20
         System.out.println(cost);
-        cost = frogJump2.minCost(new int[]{30, 20, 50, 10, 40});
+        cost = frogJump2.minCost(new int[]{30, 20, 50, 10, 40},2);//30
+        System.out.println(cost);
+        cost = frogJump2.minCost(new int[]{10, 5, 20, 0, 15},2);//15
+        System.out.println(cost);
+        cost = frogJump2.minCost(new int[]{15, 4, 1, 14, 15},3);//2
         System.out.println(cost);
     }
 }
