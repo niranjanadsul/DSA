@@ -1,4 +1,4 @@
-package DynamicProgramming.DP_2D;
+package DynamicProgramming.PathSums_3;
 
 import java.util.Arrays;
 import java.util.List;
