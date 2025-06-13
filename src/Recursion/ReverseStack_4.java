@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class ReverseStack_4 {
+    //https://www.geeksforgeeks.org/problems/reverse-a-stack/1
     public void reverse(Stack<Integer> s) {
         if(s.isEmpty())
             return;
