@@ -1,7 +1,7 @@
 package Recursion;
 
 public class CountGoodNumber_2 {
-
+    //https://leetcode.com/problems/count-good-numbers/description/
     int mod=1000000000+7;
     public int countGoodNumbers(long n) {
         //if the n is even then we have n/2 even index and n/2 odd index for prime digits
