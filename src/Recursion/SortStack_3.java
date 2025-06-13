@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class SortStack_3 {
+    //https://www.geeksforgeeks.org/problems/sort-a-stack/1
     //pop each element into the function stack and then position the elements
     public Stack<Integer> sort(Stack<Integer> s) {
         if(s.isEmpty())
