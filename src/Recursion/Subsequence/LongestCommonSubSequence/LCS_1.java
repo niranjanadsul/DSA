@@ -32,4 +32,9 @@ public class LCS_1 {
         return t[n][m];
     }
 
+    public static void main(String[] args) {
+        LCS_1 lcs1=new LCS_1();
+        System.out.println(lcs1.longestCommonSubsequence("abaaa","baabaca"));
+    }
+
 }
