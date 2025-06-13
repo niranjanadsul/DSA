@@ -2,7 +2,7 @@ package Recursion;
 
 public class PowerX_N_1 {
     public static long mod = 1000000000+7;
-    //refer the One note for Binary exponentiation algo
+    //refer Binary exponentiation algo
     private static double power(double x, int n){
         if(n==0)
             return 1;
