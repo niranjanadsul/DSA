@@ -1,4 +1,4 @@
-package DynamicProgramming.Subsequence.MeetInTheMiddle;
+package DynamicProgramming.DPSubsequence;
 
 import java.util.Arrays;
 

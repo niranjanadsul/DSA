@@ -1,4 +1,4 @@
-package Recursion.Subsequence.LongestCommonSubSequence;
+package DynamicProgramming.DPSubsequence.LongestCommonSubSequence;
 
 public class LCS_1 {
     //https://leetcode.com/problems/longest-common-subsequence/description/

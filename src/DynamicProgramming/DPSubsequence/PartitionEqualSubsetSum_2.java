@@ -1,10 +1,23 @@
-package DynamicProgramming.Subsequence;
+package DynamicProgramming.DPSubsequence;
 
 import java.util.Arrays;
 
-public class SubsetSum_1 {
-    static Boolean isSubsetSum(int arr[], int sum) {
-        // code here
+public class PartitionEqualSubsetSum_2 {
+    //https://leetcode.com/problems/partition-equal-subset-sum/
+    //Time complexity:  O(n*(sum/2))
+    public boolean canPartition(int[] arr) {
+        //variant of subset sum
+        //if sum of array is even then only equal sum partitions will exist
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+
+        if (sum % 2 != 0) {
+            return false;
+        }
+        //if sum is even then we need to use subset sum for sum = sum/2
+        sum = sum/2;
         int[][] dp = new int[arr.length][sum+1];
         for(int[] d:dp){
             Arrays.fill(d,-1);
@@ -12,7 +25,7 @@ public class SubsetSum_1 {
         return checkSum(0,sum,arr,dp);
     }
 
-    public static boolean checkSum(int index, int target, int[] arr,int[][] dp){
+    boolean checkSum(int index, int target, int[] arr,int[][] dp){
         if(target==0)
             return true;
         if(index>=arr.length)
@@ -29,12 +42,5 @@ public class SubsetSum_1 {
         }
         dp[index][target] = notTake || take?1:0;
         return notTake || take;
-    }
-
-    public static void main(String[] args) {
-        boolean isSub=SubsetSum_1.isSubsetSum(new int[]{3, 34, 4, 12, 5, 2},9);//true
-        System.out.println(isSub);
-        isSub=SubsetSum_1.isSubsetSum(new int[]{3, 34, 4, 12, 5, 2},30);//false
-        System.out.println(isSub);
     }
 }
