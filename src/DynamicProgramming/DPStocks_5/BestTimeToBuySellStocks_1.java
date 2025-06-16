@@ -18,7 +18,7 @@ public class BestTimeToBuySellStocks_1 {
     Output: 5
     Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
     Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.*/
-
+    //T.C = O(n*2)
     public int maxProfit(int[] prices) {
         int[][] dp = new int[prices.length][2]; //buy/sell flag
         for(int[] d:dp){
