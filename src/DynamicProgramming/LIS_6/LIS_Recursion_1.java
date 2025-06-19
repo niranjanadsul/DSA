@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class LIS_Recursion_1 {
     //https://leetcode.com/problems/longest-increasing-subsequence/
+    //Pattern:
+    //CURRENT element is TAKEN based on PREVIOUS element taken
     //TC = O(N*N)
     public int lengthOfLIS(int[] nums) {
         int[][] dp = new int[nums.length][nums.length+1];
