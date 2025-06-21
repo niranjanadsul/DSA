@@ -16,7 +16,7 @@ public class PrintLIS_3 {
             }else {
                 int lb=floor(dp,num); // TC log n
                 if(lb!=-1 && dp.get(lb)==num){
-                    insertedAtLen[i]=lb+2;
+                    insertedAtLen[i]=lb+1;
                     continue;
                 }
                 insertedAtLen[i]=lb+2;
