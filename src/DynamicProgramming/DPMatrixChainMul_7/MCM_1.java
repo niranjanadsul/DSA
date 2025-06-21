@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class MCM_1 {
     //https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1
+    //TC = O(n*n*n) ==> n*n states/dp array dimension and
+    //                  to fill each cell O(n) we need to find the min cost for each partition
+    //TC = O(n^3)
     static int matrixMultiplication(int arr[]) {
         //MCM is basically treated as partitioning where the partitioning starts from index 1 till index n-2
         //e.g    A B C
