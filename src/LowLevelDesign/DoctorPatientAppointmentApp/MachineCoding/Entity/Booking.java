@@ -1,6 +1,6 @@
-package Flipkart.MachineCoding.Entity;
+package LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity;
 
-import Flipkart.MachineCoding.Enums.BookingType;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Enums.BookingType;
 
 public class Booking {
     int id;

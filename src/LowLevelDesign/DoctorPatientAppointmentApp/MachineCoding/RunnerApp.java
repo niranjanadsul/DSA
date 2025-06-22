@@ -1,13 +1,13 @@
-package Flipkart.MachineCoding;
+package LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding;
 
-import Flipkart.MachineCoding.Entity.Booking;
-import Flipkart.MachineCoding.Entity.Doctor;
-import Flipkart.MachineCoding.Service.BookingService;
-import Flipkart.MachineCoding.Service.DoctorService;
-import Flipkart.MachineCoding.Service.PatientService;
-import Flipkart.MachineCoding.Strategies.Implementations.RankSlotsByStartTime;
-import Flipkart.MachineCoding.Validation.SlotValidator;
-import Flipkart.MachineCoding.Validation.implementation.HalfHourlySlotValidator;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity.Booking;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity.Doctor;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Service.BookingService;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Service.DoctorService;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Service.PatientService;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Strategies.Implementations.RankSlotsByStartTime;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Validation.SlotValidator;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Validation.implementation.HalfHourlySlotValidator;
 
 import java.util.Arrays;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package Flipkart.MachineCoding.Entity;
+package LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity;
 
 public class Patient{
     String name;

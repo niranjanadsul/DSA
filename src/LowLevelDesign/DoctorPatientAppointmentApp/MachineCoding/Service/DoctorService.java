@@ -1,9 +1,9 @@
-package Flipkart.MachineCoding.Service;
+package LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Service;
 
-import Flipkart.MachineCoding.Constants;
-import Flipkart.MachineCoding.Entity.Doctor;
-import Flipkart.MachineCoding.Enums.Speciality;
-import Flipkart.MachineCoding.Strategies.SlotRanker;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Constants;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity.Doctor;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Enums.Speciality;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Strategies.SlotRanker;
 
 import java.util.HashMap;
 import java.util.List;

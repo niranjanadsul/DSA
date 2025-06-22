@@ -1,12 +1,12 @@
-package Flipkart.MachineCoding.Service;
+package LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Service;
 
 
-import Flipkart.MachineCoding.Entity.Booking;
-import Flipkart.MachineCoding.Entity.Doctor;
-import Flipkart.MachineCoding.Entity.Patient;
-import Flipkart.MachineCoding.Entity.Slot;
-import Flipkart.MachineCoding.Enums.BookingType;
-import Flipkart.MachineCoding.Enums.Speciality;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity.Booking;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity.Doctor;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity.Patient;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity.Slot;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Enums.BookingType;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Enums.Speciality;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
-package Flipkart.MachineCoding.Entity;
+package LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity;
 
-import Flipkart.MachineCoding.Constants;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Constants;
 
 import java.util.LinkedList;
 import java.util.Queue;

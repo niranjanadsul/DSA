@@ -1,4 +1,4 @@
-package Flipkart.MachineCoding;
+package LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding;
 
 public class Constants {
     public static final String SPECIALITY = "Speciality";

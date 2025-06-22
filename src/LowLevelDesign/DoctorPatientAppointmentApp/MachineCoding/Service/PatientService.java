@@ -1,6 +1,6 @@
-package Flipkart.MachineCoding.Service;
+package LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Service;
 
-import Flipkart.MachineCoding.Entity.Patient;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity.Patient;
 
 import java.util.HashMap;
 import java.util.Map;

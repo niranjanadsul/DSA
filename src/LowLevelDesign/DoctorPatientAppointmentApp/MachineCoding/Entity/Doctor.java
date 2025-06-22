@@ -1,11 +1,8 @@
-package Flipkart.MachineCoding.Entity;
+package LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity;
 
-import Flipkart.MachineCoding.Enums.Speciality;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Enums.Speciality;
 
-import javax.print.Doc;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 public class Doctor{

@@ -1,7 +1,7 @@
-package Flipkart.MachineCoding.Validation.implementation;
+package LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Validation.implementation;
 
-import Flipkart.MachineCoding.Entity.Slot;
-import Flipkart.MachineCoding.Validation.SlotValidator;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Entity.Slot;
+import LowLevelDesign.DoctorPatientAppointmentApp.MachineCoding.Validation.SlotValidator;
 
 public class HalfHourlySlotValidator implements SlotValidator {
     @Override
