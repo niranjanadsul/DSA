@@ -3,7 +3,7 @@ package Tree.BinaryTree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PreOrderTraversal_1 {
+public class Recursive_PreOrderTraversal_1 {
     //https://leetcode.com/problems/binary-tree-preorder-traversal/
     public List<Integer> preorderTraversal(TreeNode root) {
         ArrayList<Integer> ls = new ArrayList<>();

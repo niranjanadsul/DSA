@@ -3,7 +3,7 @@ package Tree.BinaryTree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InOrderTraversal_1 {
+public class Recursive_InOrderTraversal_2 {
     //https://leetcode.com/problems/binary-tree-inorder-traversal/
     public List<Integer> inorderTraversal(TreeNode root) {
         ArrayList<Integer> ls = new ArrayList<>();
