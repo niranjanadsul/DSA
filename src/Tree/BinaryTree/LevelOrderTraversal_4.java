@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class LevelOrderTraversal_4 {
+    //https://leetcode.com/problems/binary-tree-level-order-traversal/description/
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> traversal = new ArrayList<>();
         if(root==null)
@@ -32,17 +33,8 @@ public class LevelOrderTraversal_4 {
         return traversal;
     }
 
-    public static TreeNode getNode(int i,int[] arr){
-        if(i>arr.length || arr[i-1]==-1)
-            return null;
-        TreeNode node = new TreeNode(arr[i-1]);
-        node.left=getNode(i*2,arr);
-        node.right=getNode(i*2+1,arr);
-        return node;
-    }
-
     public static void main(String[] args) {
         LevelOrderTraversal_4 levelOrderTraversal4=new LevelOrderTraversal_4();
-        System.out.println(levelOrderTraversal4.levelOrder(getNode(1,new int[]{3,9,20,10,-1,15,7})));
+        System.out.println(levelOrderTraversal4.levelOrder(BuildTree.getNode(1,new int[]{3,9,20,10,-1,15,7})));
     }
 }
