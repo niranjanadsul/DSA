@@ -1,6 +1,7 @@
 package Tree.BinaryTree;
 
 public class BuildTree {
+    //to build tree call with i=1
     public static TreeNode getNode(int i,int[] arr){
         if(i>arr.length || arr[i-1]==-1)
             return null;
