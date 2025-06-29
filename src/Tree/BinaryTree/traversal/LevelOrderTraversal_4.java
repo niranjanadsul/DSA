@@ -1,4 +1,7 @@
-package Tree.BinaryTree;
+package Tree.BinaryTree.traversal;
+
+import Tree.BinaryTree.BuildTree;
+import Tree.BinaryTree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
