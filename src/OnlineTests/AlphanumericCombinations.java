@@ -5,15 +5,15 @@ import java.util.Arrays;
 public class AlphanumericCombinations {
     public static void main(String[] s){
         String in="123";
-        in="2112";
+        in="314241414346644541652433556252665423311365641144551513243152623366656365516344432643125444163114545266353646436155611516162544434342253552516212225664435126342612366162364456225214466124311533435356363";
         //in="2101";
         int[] arr = new int[1];
         arr[0]=0;
-        alpha(0,1,in,arr);
-        System.out.println(arr[0]);
+        //alpha(0,1,in,arr);
+        //System.out.println(arr[0]);
 
-        int[][] dp = new int[in.length()+1][in.length()+1];
-        for(int []d:dp)
+        long[][] dp = new long[in.length()+1][in.length()+1];
+        for(long []d:dp)
             Arrays.fill(d,-1);
         System.out.println(alpha2(0,1,in,dp));
     }
@@ -36,9 +36,9 @@ public class AlphanumericCombinations {
         alpha(s,e+1,in,arr);
     }
 
-    public static int alpha2(int s, int e, String in, int[][] dp){
+    public static long alpha2(int s, int e, String in, long[][] dp){
         if(s==in.length()){
-            return 1;
+            return 1L;
         }
         if(e>in.length()){
             return 0;
@@ -50,10 +50,10 @@ public class AlphanumericCombinations {
             return dp[s][e]=0;
         else {
             //take partition
-            int tk = alpha2(e, e + 1, in, dp);
+            long tk = alpha2(e, e + 1, in, dp);
 
             //not take partition
-            int nt = alpha2(s, e + 1, in, dp);
+            long nt = alpha2(s, e + 1, in, dp);
             return dp[s][e]=tk+nt;
         }
     }
