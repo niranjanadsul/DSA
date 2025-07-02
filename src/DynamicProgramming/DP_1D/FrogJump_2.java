@@ -2,6 +2,11 @@ package DynamicProgramming.DP_1D;
 
 public class FrogJump_2 {
     //https://www.geeksforgeeks.org/problems/geek-jump/1
+    /*Given an integer array height[] where height[i] represents the height of the i-th stair,
+    a frog starts from the first stair and wants to reach the top. From any stair i,
+    the frog has two options: it can either jump to the (i+1)th stair or the (i+2)th stair.
+    The cost of a jump is the absolute difference in height between the two stairs.
+    Determine the minimum total cost required for the frog to reach the top.*/
     // to reach 0 index frog need 0 cost
     // to reach i th index a frog can jump from i-1 or i-2 th index based on which jump is min cost
     int minCost(int[] height) {

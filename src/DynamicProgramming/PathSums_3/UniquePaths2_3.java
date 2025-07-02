@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class UniquePaths2_3 {
     //https://leetcode.com/problems/unique-paths-ii/
+    //grid has obstacles
     // time complexity =  O(m*n)
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         int m = obstacleGrid.length, n=obstacleGrid[0].length;

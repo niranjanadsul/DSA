@@ -3,6 +3,7 @@ package DynamicProgramming.DP_1D;
 import java.util.Arrays;
 
 public class HouseRobber2_4 {
+    //the houses are arranged in a circle  and last and first house are adjacent
     public int rob(int[] nums) {
         if(nums.length==1)
             return nums[0];
