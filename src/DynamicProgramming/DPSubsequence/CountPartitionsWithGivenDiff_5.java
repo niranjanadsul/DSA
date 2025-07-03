@@ -4,11 +4,15 @@ import java.util.Arrays;
 
 public class CountPartitionsWithGivenDiff_5 {
     //https://www.geeksforgeeks.org/problems/partitions-with-given-difference/1
+    /*Given an array arr[], partition it into two subsets(possibly empty) such that each element
+    must belong to only one subset. Let the sum of the elements of these two subsets be sum1 and sum2.
+    Given a difference d, count the number of partitions in which sum1 is greater than or equal to sum2
+    and the difference between sum1 and sum2 is equal to d.*/
     //here s1 - s2 =diff
-    // s1+s2 = totSum
-    // 2S1 = totSum + diff
-    // s1 = (totSum + diff)/2
-    // therefore we need to count the partitions with s1 = (totSum + diff)/2
+    // s1+s2 = Sum
+    // 2S1 = Sum + diff
+    // s1 = (Sum + diff)/2
+    // therefore we need to count the partitions with s1 = (Sum + diff)/2
     // but if s1 is odd then return 0
 
     int countPartitions(int[] nums, int d) {

@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 public class PerfectSum_4 {
     //https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/1
+    /*Given an array arr of non-negative integers and an integer target,
+    the task is to count all subsets of the array whose sum is equal to the given target.
+            Examples:
+    Input: arr[] = [5, 2, 3, 10, 6, 8], target = 10
+    Output: 3
+    Explanation: The subsets {5, 2, 3}, {2, 8}, and {10} sum up to the target 10.*/
     public int perfectSum(int[] nums, int target) {
         // code here
         int sum = 0;
