@@ -4,6 +4,12 @@ import java.util.*;
 
 public class PartitionWithMinimumSumDifference_3 {
     //https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/
+    /*You are given an integer array nums of 2 * n integers.
+    You need to partition nums into two arrays of length n to minimize the
+    absolute difference of the sums of the arrays. To partition nums,
+    put each element of nums into one of the two arrays.
+    Return the minimum possible absolute difference.*/
+
     //split into left and right array with n and n elements
     //target sum  = total sum/2
     //create maps of count and sums for both left and right arrays
@@ -39,17 +45,17 @@ public class PartitionWithMinimumSumDifference_3 {
             List<Integer>>rightMap, int goal,int totalSum,int n){
         int min=Integer.MAX_VALUE;
 
-        for(int key:leftMap.keySet()){
-            List<Integer>leSumList=leftMap.get(key);
-            int rightKey=n-key;
+        for(int leftKey:leftMap.keySet()){
+            List<Integer>leftSumList=leftMap.get(leftKey);
+            int rightKey=n-leftKey;
             List<Integer>rightSum=rightMap.get(rightKey);
             Collections.sort(rightSum);
-            for(int i=0;i<leSumList.size();i++){
-                int x=leSumList.get(i);
+            for(int i=0;i<leftSumList.size();i++){
+                int x=leftSumList.get(i);
                 int target=goal-x;
                 int y=binarySearchNearestElement(rightSum,target);
-                int sumdi=x+rightSum.get(y);
-                min=Math.min(min,Math.abs((2*sumdi)-totalSum));
+                int s1=x+rightSum.get(y);
+                min=Math.min(min,Math.abs((2*s1)-totalSum));
             }
         }
         return min;
