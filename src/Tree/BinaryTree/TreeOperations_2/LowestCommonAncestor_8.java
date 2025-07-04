@@ -16,6 +16,7 @@ public class LowestCommonAncestor_8 {
         if(root==p || root==q)
             return root;
 
+        //POST ORDER
         //check if p or q in left subtree of this root
         TreeNode left = lowestCommonAncestor(root.left,p,q);
         //check if p or q in right subtree of this root
