@@ -1,4 +1,4 @@
-package DynamicProgramming.DPSubsequence.DPStrings;
+package DynamicProgramming.DPSubsequence.DPStrings_11;
 
 public class LongestCommonSubstring_2 {
     //https://www.geeksforgeeks.org/problems/longest-common-substring1452/1

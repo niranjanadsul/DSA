@@ -1,4 +1,4 @@
-package DynamicProgramming.DPSubsequence.DPStrings.LongestCommonSubSequence;
+package DynamicProgramming.DPSubsequence.DPStrings_11.LongestCommonSubSequence;
 
 public class ShortestCommonSuperSequence_6 {
     //https://leetcode.com/problems/shortest-common-supersequence/description/

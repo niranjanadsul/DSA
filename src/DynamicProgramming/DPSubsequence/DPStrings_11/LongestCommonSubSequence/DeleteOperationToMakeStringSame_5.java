@@ -1,4 +1,4 @@
-package DynamicProgramming.DPSubsequence.DPStrings.LongestCommonSubSequence;
+package DynamicProgramming.DPSubsequence.DPStrings_11.LongestCommonSubSequence;
 
 public class DeleteOperationToMakeStringSame_5 {
     //https://leetcode.com/problems/delete-operation-for-two-strings/

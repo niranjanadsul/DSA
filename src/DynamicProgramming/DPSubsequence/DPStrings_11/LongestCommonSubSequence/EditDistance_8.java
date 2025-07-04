@@ -1,4 +1,4 @@
-package DynamicProgramming.DPSubsequence.DPStrings.LongestCommonSubSequence;
+package DynamicProgramming.DPSubsequence.DPStrings_11.LongestCommonSubSequence;
 
 import java.util.Arrays;
 

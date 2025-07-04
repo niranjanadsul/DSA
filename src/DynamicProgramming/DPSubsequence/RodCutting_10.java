@@ -2,8 +2,13 @@ package DynamicProgramming.DPSubsequence;
 
 import java.util.Arrays;
 
-public class RodCutting_9 {
+public class RodCutting_10 {
     //https://www.geeksforgeeks.org/problems/rod-cutting0840/1
+    /*Given a rod of length n inches and an array price[],
+    where price[i] denotes the value of a piece of length i.
+    Your task is to determine the maximum value obtainable by cutting up the rod and selling the pieces.
+    Note: n = size of price, and price[] is 1-indexed array.*/
+
     //this problem can be treated same as unbounded knapsack
     //consider the price array as values
     //length of the rod as the capacity of knapsack

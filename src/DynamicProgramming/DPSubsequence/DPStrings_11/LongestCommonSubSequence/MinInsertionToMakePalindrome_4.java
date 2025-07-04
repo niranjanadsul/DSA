@@ -1,7 +1,21 @@
-package DynamicProgramming.DPSubsequence.DPStrings.LongestCommonSubSequence;
+package DynamicProgramming.DPSubsequence.DPStrings_11.LongestCommonSubSequence;
 
-public class LCS_1 {
-    //https://leetcode.com/problems/longest-common-subsequence/description/
+public class MinInsertionToMakePalindrome_4 {
+    //https://leetcode.com/problems/delete-operation-for-two-strings/description/
+    //Same as LCS we will first find the LPS and then ans = totalLength-LPS
+    //bcz LPS gives us the length of longest Palindrome possible
+    //all the remaining character can be inserted again to make the entire String as palindrome
+    public int minInsertions(String s) {
+        int lps = longestPalindromeSubseq(s);
+        return s.length()-lps;
+    }
+    public int longestPalindromeSubseq(String s) {
+        String s2 = "";
+        for(char c:s.toCharArray())
+            s2 = c+s2;
+        return longestCommonSubsequence(s,s2);
+    }
+
     public int longestCommonSubsequence(String text1, String text2) {
         int n = text1.length();
         int m = text2.length();
@@ -31,10 +45,4 @@ public class LCS_1 {
 
         return t[n][m];
     }
-
-    public static void main(String[] args) {
-        LCS_1 lcs1=new LCS_1();
-        System.out.println(lcs1.longestCommonSubsequence("abaaa","baabaca"));
-    }
-
 }

@@ -2,8 +2,13 @@ package DynamicProgramming.DPSubsequence;
 
 import java.util.Arrays;
 
-public class UnboundedKanpSack_8 {
+public class UnboundedKnapSack_9 {
     //https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1
+    /*Given a set of items, each with a weight and a value, represented by the array wt and
+    val respectively. Also, a knapsack with a weight limit capacity.
+    The task is to fill the knapsack in such a way that we can get the maximum profit.
+    Return the maximum profit.
+    Note: Each item can be taken any number of times.*/
     static int knapSack(int val[], int wt[], int capacity) {
         // code here
         int[][] dp = new int[val.length][capacity+1];

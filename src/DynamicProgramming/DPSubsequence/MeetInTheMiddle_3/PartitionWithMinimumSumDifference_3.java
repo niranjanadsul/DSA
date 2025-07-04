@@ -1,4 +1,4 @@
-package DynamicProgramming.DPSubsequence.MeetInTheMiddle;
+package DynamicProgramming.DPSubsequence.MeetInTheMiddle_3;
 
 import java.util.*;
 

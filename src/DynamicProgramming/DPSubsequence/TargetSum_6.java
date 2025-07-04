@@ -2,8 +2,15 @@ package DynamicProgramming.DPSubsequence;
 
 import java.util.Arrays;
 
-public class TargetSum_5_1 {
+public class TargetSum_6 {
     //https://leetcode.com/problems/target-sum/
+    /*You are given an integer array nums and an integer target.
+    You want to build an expression out of nums by adding one of the symbols
+    '+' and '-' before each integer in nums and then concatenate all the integers.
+    For example, if nums = [2, 1], you can add a '+' before 2 and a '-' before 1
+    and concatenate them to build the expression "+2-1".
+    Return the number of different expressions that you can build, which evaluates to target.*/
+
     // this is similar to CountPartitionsWithGivenDiff_5 problem
     //lets assume that the input array has elements as a,b,c,d,e
     // we want to add operator('+','-') to them so that the sum becomes target
@@ -54,7 +61,7 @@ public class TargetSum_5_1 {
     }
 
     public static void main(String[] args) {
-        TargetSum_5_1 targetSum51 = new TargetSum_5_1();
+        TargetSum_6 targetSum51 = new TargetSum_6();
         int count;
         count= targetSum51.findTargetSumWays(new int[]{1,1,1,1,1},3);//5
         System.out.println(count);

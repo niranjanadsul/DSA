@@ -1,4 +1,4 @@
-package DynamicProgramming.DPSubsequence.DPStrings.LongestCommonSubSequence;
+package DynamicProgramming.DPSubsequence.DPStrings_11.LongestCommonSubSequence;
 
 public class LongestPallindromicSubsequence_3 {
     //https://leetcode.com/problems/longest-palindromic-subsequence/
