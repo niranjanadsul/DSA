@@ -1,4 +1,4 @@
-package Tree.BinaryTree.TreeOperations_2.BFS_Probleams_9;
+package Tree.BinaryTree.TreeOperations_2.BFS_Problems_10;
 
 import Tree.BinaryTree.TreeNode;
 

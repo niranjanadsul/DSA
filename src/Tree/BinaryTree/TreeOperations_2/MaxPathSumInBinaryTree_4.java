@@ -35,7 +35,7 @@ public class MaxPathSumInBinaryTree_4 {
 
     public static void main(String[] args) {
         MaxPathSumInBinaryTree_4 maxPathSumInBinaryTree4=new MaxPathSumInBinaryTree_4();
-        System.out.println(maxPathSumInBinaryTree4.maxPathSum(BuildTree.getNode(1,new int[]{1,-2,3})));
-        System.out.println(maxPathSumInBinaryTree4.maxPathSum(BuildTree.getNode(1,new int[]{9,6,-3,-1,-1,-6,2,-1,-1,2,-1,-6,-6,-6})));
+        System.out.println(maxPathSumInBinaryTree4.maxPathSum(BuildTree.getTreeNode(1,new int[]{1,-2,3})));
+        System.out.println(maxPathSumInBinaryTree4.maxPathSum(BuildTree.getTreeNode(1,new int[]{9,6,-3,-1,-1,-6,2,-1,-1,2,-1,-6,-6,-6})));
     }
 }

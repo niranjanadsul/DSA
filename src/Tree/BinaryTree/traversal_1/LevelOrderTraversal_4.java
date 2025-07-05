@@ -38,6 +38,6 @@ public class LevelOrderTraversal_4 {
 
     public static void main(String[] args) {
         LevelOrderTraversal_4 levelOrderTraversal4=new LevelOrderTraversal_4();
-        System.out.println(levelOrderTraversal4.levelOrder(BuildTree.getNode(1,new int[]{3,9,20,10,-1,15,7})));
+        System.out.println(levelOrderTraversal4.levelOrder(BuildTree.getTreeNode(1,new int[]{3,9,20,10,-1,15,7})));
     }
 }
