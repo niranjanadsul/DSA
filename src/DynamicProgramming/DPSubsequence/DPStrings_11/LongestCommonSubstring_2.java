@@ -2,6 +2,12 @@ package DynamicProgramming.DPSubsequence.DPStrings_11;
 
 public class LongestCommonSubstring_2 {
     //https://www.geeksforgeeks.org/problems/longest-common-substring1452/1
+    /*You are given two strings s1 and s2.
+    Your task is to find the length of the longest common substring among the given strings.
+    Examples:
+    Input: s1 = "ABCDGH", s2 = "ACDGHR"
+    Output: 4
+    Explanation: The longest common substring is "CDGH" with a length of 4.*/
     //Here we are dealing with continuous substring
     //check the notes
     public int longestCommonSubstr(String s1, String s2) {

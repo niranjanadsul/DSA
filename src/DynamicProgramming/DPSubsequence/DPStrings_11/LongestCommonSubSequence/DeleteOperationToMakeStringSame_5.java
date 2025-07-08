@@ -2,6 +2,14 @@ package DynamicProgramming.DPSubsequence.DPStrings_11.LongestCommonSubSequence;
 
 public class DeleteOperationToMakeStringSame_5 {
     //https://leetcode.com/problems/delete-operation-for-two-strings/
+    /*Given two strings word1 and word2, return the minimum number of steps required
+    to make word1 and word2 the same.
+    In one step, you can delete exactly one character in either string.
+            Example 1:
+    Input: word1 = "sea", word2 = "eat"
+    Output: 2
+    Explanation: You need one step to make "sea" to "ea" and another step to make "eat" to "ea".*/
+
     //calculate the LCS of two strings
     //then find difference ans = (n-LCS) + (m-LCS) where n and m are length of two Strings
     public int minDistance(String word1, String word2) {

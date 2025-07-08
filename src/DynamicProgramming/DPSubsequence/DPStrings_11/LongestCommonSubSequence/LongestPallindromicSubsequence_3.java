@@ -2,6 +2,12 @@ package DynamicProgramming.DPSubsequence.DPStrings_11.LongestCommonSubSequence;
 
 public class LongestPallindromicSubsequence_3 {
     //https://leetcode.com/problems/longest-palindromic-subsequence/
+    /*Given a string s, find the longest palindromic subsequence's length in s.
+    A subsequence is a sequence that can be derived from another sequence by deleting
+    some or no elements without changing the order of the remaining elements.
+    Input: s = "bbbab"
+    Output: 4
+    Explanation: One possible longest palindromic subsequence is "bbbb".*/
     //this is similar to LCS
     //in LCS we have 2 input strings. But here in LPS we have only 1 string
     // hence other string can be formed by reversing input string

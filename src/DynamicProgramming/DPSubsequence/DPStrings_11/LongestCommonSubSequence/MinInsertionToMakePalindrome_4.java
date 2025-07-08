@@ -1,7 +1,16 @@
 package DynamicProgramming.DPSubsequence.DPStrings_11.LongestCommonSubSequence;
 
 public class MinInsertionToMakePalindrome_4 {
-    //https://leetcode.com/problems/delete-operation-for-two-strings/description/
+    //https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/description/
+    /*
+    Given a string s. In one step you can insert any character at any index of the string.
+    Return the minimum number of steps to make s palindrome.
+    A Palindrome String is one that reads the same backward as well as forward.
+    Example 1:
+    Input: s = "zzazz"
+    Output: 0
+    Explanation: The string "zzazz" is already palindrome we do not need any insertions.*/
+
     //Same as LCS we will first find the LPS and then ans = totalLength-LPS
     //bcz LPS gives us the length of longest Palindrome possible
     //all the remaining character can be inserted again to make the entire String as palindrome

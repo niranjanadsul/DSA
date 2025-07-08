@@ -2,7 +2,20 @@ package DynamicProgramming.DPSubsequence.DPStrings_11.LongestCommonSubSequence;
 
 public class ShortestCommonSuperSequence_6 {
     //https://leetcode.com/problems/shortest-common-supersequence/description/
-    //SCS is a string that can generate both the inout strings
+    /*Given two strings str1 and str2, return the shortest string that has both str1 and str2
+    as subsequences. If there are multiple valid strings, return any of them.
+    A string s is a subsequence of string t if deleting some number of characters
+    from t (possibly 0) results in the string s.
+    Example 1:
+
+    Input: str1 = "abac", str2 = "cab"
+    Output: "cabac"
+    Explanation:
+    str1 = "abac" is a subsequence of "cabac" because we can delete the first "c".
+    str2 = "cab" is a subsequence of "cabac" because we can delete the last "ac".
+    The answer provided is the shortest such string that satisfies these properties.*/
+
+    //SCS is a string that can generate both the input strings
     //E.g s1 = abc s2 = bed . Here LCS = b
     // scs = abced. So here we neet to combine both strings and remove the LCS only once to get SCS
     //to get the SCS we will do same as printing LCS but if at an i and j if the characters are not same

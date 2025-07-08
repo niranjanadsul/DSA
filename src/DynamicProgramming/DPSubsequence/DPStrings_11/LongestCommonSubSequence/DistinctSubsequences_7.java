@@ -4,6 +4,20 @@ import java.util.Arrays;
 
 public class DistinctSubsequences_7 {
     //https://leetcode.com/problems/distinct-subsequences/description/
+    /*Given two strings s and t, return the number of distinct subsequences of s which equals t.
+    The test cases are generated so that the answer fits on a 32-bit signed integer.
+    Example 1:
+    Input: s = "rabbbit", t = "rabbit"
+    Output: 3
+    Explanation:
+    As shown below, there are 3 ways you can generate "rabbit" from s.
+    rabb b it
+    rab b bit
+    ra b bbit*/
+
+    //here again we want to find the count
+    //hence for the success termination case we return 1
+    //also add up the counts of all the choices/recursive calls
     public int numDistinct(String s, String t) {
         int[][] dp = new int[s.length()+1][t.length()+1];
         for(int[]d:dp)
