@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public class LIS_Recursion_1 {
     //https://leetcode.com/problems/longest-increasing-subsequence/
+    /*Given an integer array nums, return the length of the longest strictly increasing subsequence.
+    Example 1:
+    Input: nums = [10,9,2,5,3,7,101,18]
+    Output: 4
+    Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.*/
     //Pattern:
     //CURRENT element is TAKEN based on PREVIOUS element taken
     //TC = O(N*N)
