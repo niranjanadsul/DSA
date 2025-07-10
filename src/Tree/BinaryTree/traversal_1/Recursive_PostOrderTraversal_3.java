@@ -13,7 +13,7 @@ public class Recursive_PostOrderTraversal_3 {
         return ls;
     }
 
-    //root,left,right
+    //left,right,root
     public void postOrder(TreeNode node, List<Integer> traversal){
         if(node!=null){
             postOrder(node.left,traversal);

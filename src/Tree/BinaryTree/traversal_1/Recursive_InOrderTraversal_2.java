@@ -13,7 +13,7 @@ public class Recursive_InOrderTraversal_2 {
         return ls;
     }
 
-    //root,left,right
+    //left,root,right
     public void inOrder(TreeNode node,List<Integer> traversal){
         if(node!=null){
             inOrder(node.left,traversal);
