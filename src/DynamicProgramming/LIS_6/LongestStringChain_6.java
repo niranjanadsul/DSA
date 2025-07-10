@@ -3,7 +3,7 @@ package DynamicProgramming.LIS_6;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class LongestStringChain_5 {
+public class LongestStringChain_6 {
     //https://leetcode.com/problems/longest-string-chain/description/
     //same as LIS
     //different take condition

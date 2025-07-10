@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class LongestDivisibleSubsequence_4 {
+public class LongestDivisibleSubsequence_5 {
     //this is same as LIS just the take condition is different
     //take condition has mod operator condition
     public List<Integer> largestDivisibleSubset(int[] nums) {

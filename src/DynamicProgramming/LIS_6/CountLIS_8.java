@@ -1,9 +1,8 @@
 package DynamicProgramming.LIS_6;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
-public class CountLIS_7 {
+public class CountLIS_8 {
     //https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
     //TC = O(n*n)
     /*So, we need to track:
@@ -55,7 +54,7 @@ public class CountLIS_7 {
     }
 
     public static void main(String[] args) {
-        CountLIS_7 countLIS7=new CountLIS_7();
+        CountLIS_8 countLIS7=new CountLIS_8();
         System.out.println(countLIS7.findNumberOfLIS(new int[]{1,3,5,4,7}));//2
         System.out.println(countLIS7.findNumberOfLIS(new int[]{2,2,2,2,2}));//5
     }

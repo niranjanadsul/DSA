@@ -3,7 +3,7 @@ package DynamicProgramming.LIS_6;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class LongestBitonicSubsequence_6 {
+public class LongestBitonicSubsequence_7 {
     //https://www.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1
     public static int LongestBitonicSequence(int n, int[] nums) {
         int[] lenOfLISUpToEachIndex = getLIS(nums);
@@ -81,7 +81,7 @@ public class LongestBitonicSubsequence_6 {
     }
 
     public static void main(String[] args) {
-        System.out.println(LongestBitonicSubsequence_6.LongestBitonicSequence(8,new int[]{1,11,2,10,4,5,2,1}));//6
-        System.out.println(LongestBitonicSubsequence_6.LongestBitonicSequence(8,new int[]{1,4,2,7,9,10}));//3
+        System.out.println(LongestBitonicSubsequence_7.LongestBitonicSequence(8,new int[]{1,11,2,10,4,5,2,1}));//6
+        System.out.println(LongestBitonicSubsequence_7.LongestBitonicSequence(8,new int[]{1,4,2,7,9,10}));//3
     }
 }

@@ -3,7 +3,7 @@ package DynamicProgramming.LIS_6;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class PrintLIS_3 {
+public class PrintLIS_4 {
     public ArrayList<Integer> getLIS(int nums[]) {
         ArrayList<Integer> dp = new ArrayList<>();
         ArrayList<Integer> actualLIS = new ArrayList<>();
@@ -58,7 +58,7 @@ public class PrintLIS_3 {
     }
 
     public static void main(String[] args) {
-        PrintLIS_3 printLIS3=new PrintLIS_3();
+        PrintLIS_4 printLIS3=new PrintLIS_4();
         System.out.println(printLIS3.getLIS(new int[]{1,5,7,10,9,6,8,9,2,3}));
     }
 }
