@@ -5,23 +5,25 @@ import Tree.BinaryTree.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Iterative_InOrderTraversal_6 {
-    public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> in = new ArrayList<>();
+public class Morris_PreOrderTraversal_6_2 {
+    //https://leetcode.com/problems/binary-tree-preorder-traversal/
+
+    //this algo is used because it does not need any recursion stack or any extra  data structure
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> pre = new ArrayList<>();
         TreeNode curr = root;
         while(curr != null){
+            pre.add(curr.val);
             if(curr.left != null){
                 TreeNode left = curr.left;
                 TreeNode rightMostOfLeftChild = getRightMostOfLeftChild(left);
-                rightMostOfLeftChild.right = curr;
-                curr.left = null;
+                rightMostOfLeftChild.right = curr.right;
                 curr = left;
             }else{
-                in.add(curr.val);
                 curr = curr.right;
             }
         }
-        return in;
+        return pre;
     }
 
     public TreeNode getRightMostOfLeftChild(TreeNode leftChild){
