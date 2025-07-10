@@ -4,6 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PrintLIS_4 {
+    //https://www.geeksforgeeks.org/problems/printing-longest-increasing-subsequence/1
+    /*You are given an array of integers arr[], return the Longest Increasing Subsequence (LIS) of the
+    given array.
+    LIS is the longest subsequence where each element is strictly greater than the previous one.
+    Note: If multiple LIS of the same maximum length exist, return the one that appears first based on
+    the lexicographical order of their indices (i.e., the earliest combination of positions from the
+    original sequence).
+    Examples:
+    Input: arr[] = [10, 20, 3, 40]
+    Output: [10, 20, 40]
+    Explanation: [10, 20, 40] is the longest subsequence where each number is greater than the previous one,
+      maintaining the original order.*/
     public ArrayList<Integer> getLIS(int nums[]) {
         ArrayList<Integer> dp = new ArrayList<>();
         ArrayList<Integer> actualLIS = new ArrayList<>();
