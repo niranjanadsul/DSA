@@ -7,7 +7,14 @@ public class UseDeadBatteryPhone_VISA {
     public int useFullBattery(int[] capapcity, int[] recharge, int t){
         // Comparator for min-heap based on the first element of the tuple
         //tuple 0 = battery availability time   & 1 = battery index
-        Comparator<int[]> tupleComparator = (a, b) -> Integer.compare(a[0], b[0]);
+        Comparator<int[]> tupleComparator = new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                if(o1[0]==o2[0])
+                    return Integer.compare(o1[1],o2[1]);
+                return Integer.compare(o1[0],o2[0]);
+            }
+        };
 
         // Create a PriorityQueue with the custom comparator
         PriorityQueue<int[]> pq = new PriorityQueue<>(tupleComparator);
