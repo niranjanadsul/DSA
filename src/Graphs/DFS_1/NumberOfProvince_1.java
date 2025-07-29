@@ -1,4 +1,4 @@
-package Graphs.DFS;
+package Graphs.DFS_1;
 
 import java.util.Arrays;
 
