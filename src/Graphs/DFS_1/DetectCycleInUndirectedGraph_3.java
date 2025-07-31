@@ -1,9 +1,6 @@
-package Graphs.BFS_2;
+package Graphs.DFS_1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class DetectCycleInUndirectedGraph_3 {
     //https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1
@@ -15,7 +12,7 @@ public class DetectCycleInUndirectedGraph_3 {
 
     Input: V = 4, E = 4, edges[][] = [[0, 1], [0, 2], [1, 2], [2, 3]]
     Output: true*/
-    //make use of BFS traversal
+    //make use of DFS traversal
     //TC = O(V+E)
     // O(E) for initailly building the Adj List
     // O(V) for iterating on each node during multi source BFS
@@ -36,19 +33,19 @@ public class DetectCycleInUndirectedGraph_3 {
 
     private static boolean detectCycle(int v,boolean[] visited,
                                        ArrayList<ArrayList<Integer>> adjList) {
-        Queue<int[]> queue=new LinkedList<>();
+        Stack<int[]> stack=new Stack<>();
         //currNode,Parent
-        queue.add(new int[]{v,-1});
+        stack.push(new int[]{v,-1});
         visited[v]=true;
-        while(!queue.isEmpty()){
-            int[] arr= queue.remove();
+        while(!stack.isEmpty()){
+            int[] arr= stack.pop();
             int currNode = arr[0];
             int parent = arr[1];
             for(int neighbour: adjList.get(currNode)){
                 if(neighbour!=parent){
                     if(visited[neighbour])
                         return true;
-                    queue.add(new int[]{neighbour,currNode});
+                    stack.push(new int[]{neighbour,currNode});
                     visited[neighbour]=true;
                 }
             }
