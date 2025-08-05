@@ -1,11 +1,8 @@
 package Graphs.TopologicalSort_3;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
-public class CourseSchedule_4 {
+public class CourseSchedule2_4 {
     //https://leetcode.com/problems/course-schedule/description/
     /*There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1.
      You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that
@@ -28,8 +25,13 @@ public class CourseSchedule_4 {
     finished course 1. So it is impossible.*/
 
     //this problem is same a topo sort
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
-        return topoSort(numCourses,prerequisites).size()==numCourses;
+
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        ArrayList<Integer> topoSort=topoSort(numCourses,prerequisites);
+        if(topoSort.size()!=numCourses)
+            return new int[0];
+        Collections.reverse(topoSort);
+        return topoSort.stream().mapToInt(Integer::intValue).toArray();
     }
 
     public ArrayList<Integer> topoSort(int V, int[][] edges) {
@@ -49,12 +51,10 @@ public class CourseSchedule_4 {
                 queue.add(i);
         }
 
-        int count=0;
         ArrayList<Integer> topoSort=new ArrayList<>();
         while (!queue.isEmpty()){
             int node=queue.remove();
             topoSort.add(node);
-            count++;
             for(int neighbour:adjLs.get(node)){
                 indegree[neighbour]-=1;
                 if(indegree[neighbour]==0)
