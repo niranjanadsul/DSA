@@ -15,7 +15,8 @@ public class FindEventualSafeStates_5 {
     * The answer should be sorted in ascending order.*/
 
     //this is same as topo sort after converting the graph to parent graph
-    //TC=O(V+E)
+    //TC=O(V+E) +O(V+E)
+    //generating the parent graph annd then topo sort
     public List<Integer> eventualSafeNodes(int[][] graph) {
         //build the parent graph
         ArrayList<ArrayList<Integer>> parentGraph = new ArrayList<>();
