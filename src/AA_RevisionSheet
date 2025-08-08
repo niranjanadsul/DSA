@@ -10,3 +10,9 @@ LLD git hub and medium links
 awesome LLD
 
 https://akhileshmj.medium.com/low-level-design-preparation-2b59af18b54a
+
+
+
+Tricks:
+1.Graph
+    -The moment word DAg appears, think of Topological sort might get applied
