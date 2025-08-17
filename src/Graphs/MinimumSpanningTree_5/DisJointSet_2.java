@@ -29,7 +29,23 @@ public class DisJointSet_2 {
         //every node itself is a parent
     }
 
-    //O(n)
+    //worst case TC = O(n)
+    /*
+    * When both path compression and union by rank/size optimizations are applied,
+    * the amortized time complexity for a
+    * sequence of M operations on N elements becomes O(M * α(N)),
+    * where α(N) is the inverse Ackermann function.
+
+    Inverse Ackermann Function (α(N)):
+    The inverse Ackermann function grows extremely slowly.
+    * For all practical input sizes,
+    * including those vastly exceeding the number of atoms in the observable universe,
+    * α(N) is less than 5.
+    *
+    Therefore, in practical terms,
+    * the time complexity of DSU with these optimizations is considered nearly constant time
+    * or effectively O(1) for each operation.*/
+    //hence TC=O(1)
     int find(int par[], int x) {
         if(par[x]==x)
             return x;
@@ -37,6 +53,7 @@ public class DisJointSet_2 {
     }
 
     void unionSet(int par[], int x, int z) {
+        //union by size
         int UPu=find(par,x);
         int UPv=find(par,z);
         if(UPu==UPv)
