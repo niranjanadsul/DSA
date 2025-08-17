@@ -1,0 +1,52 @@
+package Graphs.MinimumSpanningTree_5;
+
+import java.util.Arrays;
+
+public class DisJointSet_2 {
+    //https://www.geeksforgeeks.org/problems/disjoint-set-union-find/1
+    /*You are given n elements numbered from 1 to n. Initially, each element is in its own group.
+    You need to process k queries. Each query is one of the following types:
+
+    UNION x z – Merge the groups that contain elements x and z.
+    After this operation, both elements will belong to the same group.
+
+    FIND x – Output the ultimate representative of the group containing element x.
+    The representative is the element that acts as the "leader" of the group.
+    Initially, every element is the leader of its own group.
+
+    Input: n = 5, k = 4, queries[] = {{find 4}, {find 1}, {unionSet 3 1}, {find 3}}
+    Output: 4 1 1
+    Explanation:
+    1. The parent of 4 is 4. Hence the output is 4.
+    2. The parent of 1 is 1. Hence the output is 1.
+    3. After performing unionSet 3 1, parent of 3 becomes 1, since, parent of 1 is currently 1 itself.
+    4. The parent of 3 is now 1. Hence, the output is 1.*/
+    int[] size;
+    public DisJointSet_2(){
+        this.size=new int[100];
+        Arrays.fill(size,1);
+        //initially every node is a group of size 1
+        //every node itself is a parent
+    }
+
+    //O(n)
+    int find(int par[], int x) {
+        if(par[x]==x)
+            return x;
+        return par[x]=find(par,par[x]);//path compression
+    }
+
+    void unionSet(int par[], int x, int z) {
+        int UPu=find(par,x);
+        int UPv=find(par,z);
+        if(UPu==UPv)
+            return;
+        if(size[UPu]<size[UPv]){
+            par[UPu]=UPv;
+            size[UPv]+=size[UPu];
+        }else{
+            par[UPv]=UPu;
+            size[UPu]+=size[UPv];
+        }
+    }
+}
