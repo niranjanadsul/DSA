@@ -20,7 +20,7 @@ public class BellmanFordAlgoForShortestPath_7 {
         for(int i=1;i<=V;i++){
             boolean isRelaxed=relaxEdge(edges,distance);
             if(i==V && isRelaxed)
-                return new int[]{-1};
+                return new int[]{-1};//-ve weight cycle found
         }
         return distance;
     }
