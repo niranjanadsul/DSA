@@ -1,8 +1,16 @@
-package Graphs.AdvancedDFS;
+package Graphs.AdvancedDFS_6;
 
 import java.util.*;
 
-public class ArticulationPoint {
+public class ArticulationPoints_2 {
+    //https://www.geeksforgeeks.org/problems/articulation-point-1/1
+    /*Given an undirected connected graph with V vertices and adjacency list adj.
+    You are required to find all the vertices removing which (and edges through it) disconnects
+    the graph into 2 or more components and return it in sorted manner.
+
+    Note: Indexing is zero-based i.e nodes numbering from (0 to V-1).
+    There might be loops present in the graph.*/
+
     //Also called as Tarjan's algorithm using timeIn and lowTime
     public static int timeStamp = 1;
     public List<Integer> articulationPoints(int n, List<List<Integer>> connections) {
@@ -69,7 +77,7 @@ public class ArticulationPoint {
     }
 
     public static void main(String[] arg){
-        ArticulationPoint articulationPoint = new ArticulationPoint();
+        ArticulationPoints_2 articulationPoint = new ArticulationPoints_2();
         List<List<Integer>> conns = new ArrayList<>();
 
         for(int[] arr:new int[][]{{0,1},{1,2},{2,0},{1,3}}) {
