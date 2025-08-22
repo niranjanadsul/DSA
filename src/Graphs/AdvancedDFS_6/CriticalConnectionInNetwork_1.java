@@ -1,10 +1,10 @@
-package Graphs.AdvancedDFS;
+package Graphs.AdvancedDFS_6;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CriticalConnection {
+public class CriticalConnectionInNetwork_1 {
     //Also called as Tarjan's algorithm using timeIn and lowTime
     public static int timeStamp = 1;
     public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
@@ -30,8 +30,13 @@ public class CriticalConnection {
                 //neighbour not visited
                 dfs(neighbour,node,timeIn,low,visited,adjList,criticalConns);
                 low[node] = Math.min(low[node],low[neighbour]);
-                if(timeIn[node]<low[neighbour])
-                    criticalConns.add(Arrays.asList(node,neighbour));
+                if(timeIn[node]<low[neighbour]) {
+                    //if the current nodes in time is lower than the low of neighbour
+                    //this indicates that the current node has to be visited first
+                    //and then the neighbour
+                    //hence the edge between these nodes is no cyclic and is critical
+                    criticalConns.add(Arrays.asList(node, neighbour));
+                }
             }else {
                 //neighbour is visited
                 low[node] = Math.min(low[node],low[neighbour]);
@@ -54,7 +59,7 @@ public class CriticalConnection {
     }
 
     public static void main(String[] arg){
-        CriticalConnection criticalConnection = new CriticalConnection();
+        CriticalConnectionInNetwork_1 criticalConnection = new CriticalConnectionInNetwork_1();
         List<List<Integer>> conns = new ArrayList<>();
         for(int[] arr:new int[][]{{0,1},{1,2},{2,0},{1,3}}) {
             List<Integer> a = new ArrayList<>();
