@@ -1,25 +1,22 @@
-package Graphs.AdvancedDFS.StronglyConnectedComponent;
+package Graphs.AdvancedDFS_6.StronglyConnectedComponent;
 
-import Graphs.AdvancedDFS.ArticulationPoint;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
-
-public class KosarajuAlgo {
+public class KosarajuAlgo_3 {
+    //https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1
+    /*Given an adjacency list, adj of Directed Graph,
+    Find the number of strongly connected components in the graph.*/
 
     public int kosaraju(ArrayList<ArrayList<Integer>> adj) {
-        int scc = 0;
         boolean[] visited=new boolean[adj.size()];
         Arrays.fill(visited,false);
 
         //STEP:1 perform DFS traversal in DIRECTED GRAPH
-        // and sort the nodes based on finish time
-        Stack<Integer> sortedNodes = new Stack<>();
-        for(int i=0;i<adj.size();i++){
+        // fill the stack based on finish time
+        Stack<Integer> stack = new Stack<>();
+        for(int i=0;i<adj.size();i++){//multi source dfs
             if(!visited[i])
-                dfs(i,visited,sortedNodes,adj);
+                dfs(i,visited,stack,adj,true,null);
         }
 
         //STEP:2 Reverse the graph
@@ -27,25 +24,33 @@ public class KosarajuAlgo {
 
         //STEP:3 perform dfs on each entry in the stack to find Strongly Connected Component
         Arrays.fill(visited,false);
-        while(!sortedNodes.isEmpty()){
-            int node = sortedNodes.pop();
+        ArrayList<TreeSet<Integer>> allSCC=new ArrayList<>();//helps to print SCC
+        while(!stack.isEmpty()){
+            int node = stack.pop();
             if(!visited[node]){
-                dfs(node,visited,new Stack<>(),reverseAdj);
-                scc++;
+                TreeSet<Integer> currentSCC=new TreeSet<>();
+                dfs(node,visited,stack,reverseAdj,false,currentSCC);
+                allSCC.add(currentSCC);
             }
         }
-        return scc;
+        return allSCC.size();
     }
 
-    public void dfs(int node, boolean[] visited, Stack<Integer> sortedNodes,
-                    ArrayList<ArrayList<Integer>> adj){
+    public void dfs(int node, boolean[] visited, Stack<Integer> stack,
+                    ArrayList<ArrayList<Integer>> adj, boolean fillStack,TreeSet<Integer> SCC){
         visited[node] =true;
         for(int neighbour:adj.get(node)){
             if(!visited[neighbour]){
-                dfs(neighbour,visited,sortedNodes,adj);
+                dfs(neighbour,visited,stack,adj,fillStack,SCC);
             }
         }
-        sortedNodes.push(node);
+        //current node is finished processing
+        //add to stack
+        if(fillStack)
+            stack.push(node);
+        if(!fillStack){
+            SCC.add(node);
+        }
     }
 
     public ArrayList<ArrayList<Integer>> reverseGraph(ArrayList<ArrayList<Integer>> adj){
@@ -75,7 +80,7 @@ public class KosarajuAlgo {
     }
 
     public static void main(String[] arg){
-        KosarajuAlgo kosarajuAlgo = new KosarajuAlgo();
+        KosarajuAlgo_3 kosarajuAlgo = new KosarajuAlgo_3();
         List<List<Integer>> conns = new ArrayList<>();
 
         for(int[] arr:new int[][]{{1,0},{0,2},{2,1},{0,3},{3,4}}) {
