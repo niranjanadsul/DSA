@@ -31,14 +31,14 @@ public class ThreadsAndMemory_3 {
 
         // Thread 1 increments counter 1000 times
         Thread t1 = new Thread(() -> {
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 1000000; i++) {
                 counter.increment();
             }
         });
 
         // Thread 2 increments counter 1000 times
         Thread t2 = new Thread(() -> {
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 1000000; i++) {
                 counter.increment();
             }
         });
@@ -50,5 +50,6 @@ public class ThreadsAndMemory_3 {
         t2.join();
 
         System.out.println("Final count = " + counter.getCount());
+        //count will not each time be 2 million all because of race condition
     }
 }
