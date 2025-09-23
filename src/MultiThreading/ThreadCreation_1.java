@@ -1,6 +1,6 @@
 package MultiThreading;
 
-//https://lnkd.in/gtrcmzuT          Youtube playlist
+//https://www.youtube.com/playlist?list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4          Youtube playlist
 //https://lnkd.in/gyJ7aihx          LeetCode problems on concurrency
 
 import java.util.concurrent.*;
