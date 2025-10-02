@@ -1,0 +1,149 @@
+🔹 @Entity
+
+    Marks a class as a JPA entity → Hibernate will map it to a database table.
+    Example:
+
+    @Entity
+    public class ParkingLot { ... }
+
+    → creates a parking_lot table by default.
+-----------------------------------------------------------------------------
+🔹 @Data (from Lombok)
+
+    Lombok annotation that auto-generates:
+        Getters & setters
+        toString()
+        equals() & hashCode()
+        Required constructors
+
+    Saves boilerplate code.
+-----------------------------------------------------------------------------
+🔹 @NoArgsConstructor (from Lombok)
+
+    Generates a no-argument constructor.
+    Needed by Hibernate (it requires a default constructor to create entities via reflection).
+-----------------------------------------------------------------------------
+🔹 @AllArgsConstructor (from Lombok)
+
+    Generates a constructor with all fields as parameters.
+    Useful when you want to quickly create an object with all values.
+-----------------------------------------------------------------------------
+🔹 @Id
+
+    Marks a field as the primary key of the entity.
+    Each entity must have exactly one @Id.
+-----------------------------------------------------------------------------
+every JPA entity must have exactly one @Id,
+but sometimes the primary key is not a single column —
+ instead, it’s a composite key (multiple columns together).
+
+Hibernate/JPA gives us two main ways to handle composite keys:
+
+🔹 1. @EmbeddedId (Preferred for readability)
+
+    You create a separate class that holds all the key fields.
+
+    That class must be @Embeddable.
+
+    Example: Suppose a ParkingSlot is uniquely identified by (floor_id, slot_number).
+
+    @Embeddable
+    public class ParkingSlotId implements Serializable {
+        private Long floorId;
+        private Integer slotNumber;
+
+        // getters, setters, equals, hashCode
+    }
+
+
+    Then in your entity:
+
+    @Entity
+    public class ParkingSlot {
+
+        @EmbeddedId
+        private ParkingSlotId id;
+
+        @Enumerated(EnumType.STRING)
+        private SlotType slotType;
+
+        private boolean occupied;
+    }
+
+
+    👉 Hibernate will create a composite PK with (floor_id, slot_number).
+-----------------------------------------------------------------------------
+🔹 @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    Tells Hibernate how to generate the primary key values.
+    IDENTITY → lets the database auto-increment the ID.
+    Example: in PostgreSQL/MySQL it will use SERIAL/BIGSERIAL.
+
+🔹 @Enumerated(EnumType.STRING)
+
+    Used when you have a Java Enum field in your entity.
+    EnumType.STRING → stores the enum name in the DB column.
+    Example: SlotType.CAR → "CAR" in DB.
+    (Alternative is EnumType.ORDINAL which stores the numeric index,
+    but not recommended because it breaks if you reorder enum values.)
+---------------------------------------------------------------
+@OneToMany(mappedBy = "floor", cascade = CascadeType.ALL)
+
+1. @OneToMany
+
+    Declares a one-to-many relationship.
+    In plain English:
+    One ParkingLot can have many Floors.
+
+    On the Java side, you’d usually see something like:
+    @OneToMany(mappedBy = "parkingLot", cascade = CascadeType.ALL)
+    private List<Floor> floors;
+
+2. mappedBy = "parkingLot"
+
+    Says:
+    This side (ParkingLot) is not the owner of the relationship.
+    The other entity (Floor) owns it.
+    That means in Floor you will have:
+
+    @ManyToOne
+    @JoinColumn(name = "parking_lot_id")
+    private ParkingLot parkingLot;
+
+    👉 So the foreign key (parking_lot_id) lives in the floor table.
+    👉 Hibernate won’t create a separate join table — it just uses the foreign key in floor.
+
+3. cascade = CascadeType.ALL
+
+    Operations performed on ParkingLot will cascade to its Floors:
+    Save parking lot → saves all its floors.
+    Delete parking lot → deletes all its floors.
+    Update parking lot → updates all its floors.
+    This makes managing parent-child relationships easy.
+
+Hibernate will create tables:
+
+parking_lot
+id | name | location | ...
+
+floor
+id | number | parking_lot_id (FK → parking_lot.id)
+
+So:
+Each floor row points to a parking lot.
+A parking lot can have multiple floors.
+No extra join table is needed because of mappedBy.
+
+--------------------------------------------------------------------------------
+
+@JoinColumn(name = "spot_id")
+🔹 What it does
+    @JoinColumn is used in JPA/Hibernate to define the foreign key column for an association.
+    It tells Hibernate:
+    “Use this column in my table to reference the primary key of the associated entity.”
+
+🔹 Optional Attributes
+
+     nullable → @JoinColumn(name="spot_id", nullable=false) → foreign key cannot be null.
+     unique → @JoinColumn(name="spot_id", unique=true) → ensures one-to-one relationship.
+     referencedColumnName → rarely used; if the target PK is not the default id.
