@@ -1,0 +1,25 @@
+💡 What is a Repository?
+
+        In Spring Data JPA, a Repository is a Data Access Layer (DAO) that handles all interaction between your Java objects (Entities) and the database (PostgreSQL here).
+        Think of it as a bridge between your service/business logic and the database.
+
+        🛠 Why do we need Repositories?
+
+        Without repositories, you’d have to write SQL queries (or JPQL/HQL) manually for everything:
+
+        SELECT * FROM parking_lot WHERE id = 1;
+        INSERT INTO parking_lot VALUES (...);
+
+
+        With repositories, you just call Java methods like:
+
+        parkingLotRepository.findById(1L);
+        parkingLotRepository.save(new ParkingLot(...));
+
+
+Spring generates the SQL under the hood. 🚀
+
+⚡ How does it work?
+        You define an Entity → maps to a database table.
+        You create a Repository interface → extends JpaRepository<Entity, IdType>.
+        Spring auto-generates the implementation at runtime using Hibernate.
