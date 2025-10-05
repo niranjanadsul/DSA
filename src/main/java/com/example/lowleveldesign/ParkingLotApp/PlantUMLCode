@@ -1,0 +1,163 @@
+@startuml
+' PlantUML Class Diagram for Parking Lot System (LLD)
+' Clean version with entities, enums, service, strategy, observer, factory
+
+top to bottom direction
+
+' ======================
+' Entities
+' ======================
+package Entities {
+    class ParkingLot {
+        - id: Long
+        - name: String
+        - floors: List
+    }
+
+    class ParkingFloor {
+        - id: Long
+        - name: String
+        - parkingLot: ParkingLot
+        - spots: List
+    }
+
+    class ParkingSpot {
+        - id: Long
+        - spotType: SpotType
+        - status: SpotStatus
+        - floor: ParkingFloor
+    }
+
+    class Vehicle {
+        - id: Long
+        - licensePlate: String
+        - vehicleType: VehicleType
+    }
+
+    class Ticket {
+        - id: Long
+        - vehicle: Vehicle
+        - spot: ParkingSpot
+        - entryTime: DateTime
+        - exitTime: DateTime
+        - status: TicketStatus
+    }
+
+    class Payment {
+        - id: Long
+        - ticket: Ticket
+        - amount: Double
+        - timestamp: DateTime
+        - status: PaymentStatus
+    }
+}
+
+' ======================
+' Enums
+' ======================
+package Enums {
+    enum VehicleType {
+        BIKE
+        CAR
+        TRUCK
+    }
+    enum SpotType {
+        COMPACT
+        LARGE
+        HANDICAPPED
+    }
+    enum SpotStatus {
+        AVAILABLE
+        OCCUPIED
+    }
+    enum TicketStatus {
+        ACTIVE
+        PAID
+    }
+    enum PaymentStatus {
+        SUCCESS
+        FAILED
+    }
+}
+
+' ======================
+' Repositories
+' ======================
+package Repositories {
+    interface ParkingLotRepository
+    interface ParkingFloorRepository
+    interface ParkingSpotRepository
+    interface VehicleRepository
+    interface TicketRepository
+    interface PaymentRepository
+}
+
+' ======================
+' Service / Observer / Strategy / Factory
+' ======================
+package ServicePatterns {
+    class ParkingService {
+        + handleVehicleEntry(vehicle: Vehicle): Ticket
+        + handleVehicleExit(ticketId: Long): Payment
+        + getTicketById(ticketId: Long): Ticket
+    }
+
+    interface NotificationObserver {
+        + update(message: String)
+    }
+
+    interface FareCalculationStrategy {
+        + calculateFare(ticket: Ticket): double
+    }
+
+    class CarFareCalculationStrategy {
+        + calculateFare(ticket: Ticket): double
+    }
+
+    class BikeFareCalculationStrategy {
+        + calculateFare(ticket: Ticket): double
+    }
+
+    class TruckFareCalculationStrategy {
+        + calculateFare(ticket: Ticket): double
+    }
+
+    class FareCalculationFactory {
+        + getStrategy(vehicleType: VehicleType): FareCalculationStrategy
+    }
+}
+
+' ======================
+' Relationships
+' ======================
+ParkingLot "1" o-- "0..*" ParkingFloor
+ParkingFloor "1" o-- "0..*" ParkingSpot
+ParkingSpot "*" <-- "1" Ticket
+Vehicle "1" <-- "1" Ticket
+Ticket "1" <-- "1" Payment
+
+ParkingService --> TicketRepository
+ParkingService --> ParkingSpotRepository
+ParkingService --> VehicleRepository
+ParkingService --> PaymentRepository
+ParkingService --> NotificationObserver
+ParkingService --> FareCalculationFactory
+ParkingService --> Ticket
+
+' Observer pattern
+ParkingService ..> NotificationObserver : notifies
+
+' Strategy pattern
+FareCalculationFactory --> FareCalculationStrategy
+CarFareCalculationStrategy ..|> FareCalculationStrategy
+BikeFareCalculationStrategy ..|> FareCalculationStrategy
+TruckFareCalculationStrategy ..|> FareCalculationStrategy
+
+' Entity references
+ParkingFloor --> ParkingLot
+ParkingSpot --> ParkingFloor
+Ticket --> Vehicle
+Ticket --> ParkingSpot
+Payment --> Ticket
+
+@enduml
