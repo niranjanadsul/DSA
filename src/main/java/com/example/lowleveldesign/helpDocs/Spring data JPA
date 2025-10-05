@@ -23,3 +23,19 @@ Spring generates the SQL under the hood. 🚀
         You define an Entity → maps to a database table.
         You create a Repository interface → extends JpaRepository<Entity, IdType>.
         Spring auto-generates the implementation at runtime using Hibernate.
+
+these are just interfaces.
+The beauty of Spring Data JPA is that you don’t implement them manually — Spring Boot + Hibernate generates the implementation at runtime for you.
+
+🔍 How does it work?
+    When your app starts:
+        Spring scans for all @Repository interfaces that extend JpaRepository.
+        For each of them, Spring creates a proxy class (runtime implementation).
+        The proxy class internally uses Hibernate EntityManager to talk to the database.
+
+    So when you call:
+        parkingLotRepository.findById(1L);
+
+
+    Spring routes it like this:
+        ParkingLotRepository (proxy) → EntityManager → Hibernate → PostgreSQL

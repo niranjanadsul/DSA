@@ -1,0 +1,18 @@
+🧩 Step 1: Architectural Layers (Finalized)
+        Controller → ParkingService → (Uses → TicketService, VehicleService, PaymentService, ParkingSpotService)
+                                ↘︎ Uses Strategy + Factory + Observer patterns
+        Repository → Database (PostgreSQL)
+
+🧠 Step 2: Identify Key Design Patterns
+
+    We’ll introduce 4 core patterns here:
+
+    Design Pattern	Purpose	Example
+    Strategy Pattern	For fare calculation — each vehicle type (Car, Bike, Truck)
+                        can have its own pricing logic.	FareCalculationStrategy
+    Factory Pattern	    To create appropriate strategy object at runtime based on vehicle type.
+                        FareCalculationFactory
+    Observer Pattern	For notifications (entry/exit/payment updates).
+                        NotificationService (observers can be Email/SMS)
+    Singleton Pattern	For ParkingLot instance (if we treat it as a single resource managing all floors).
+                        ParkingLotManager

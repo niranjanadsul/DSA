@@ -1,8 +1,8 @@
 package com.example.lowleveldesign.ParkingLotApp.model;
 
+import com.example.lowleveldesign.ParkingLotApp.model.enums.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -10,22 +10,14 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Payment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Double amount;
-    private LocalDateTime paymentTime;
+    private double amount;
+    private LocalDateTime timestamp;
 
     @Enumerated(EnumType.STRING)
-    private PaymentStatus status;
-
-    @OneToOne
-    @JoinColumn(name = "ticket_id")
-    private Ticket ticket;
+    private PaymentStatus status = PaymentStatus.PENDING;
 }
-
-enum PaymentStatus {
-    PENDING, SUCCESS, FAILED
-}
-

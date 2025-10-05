@@ -1,5 +1,7 @@
 package com.example.lowleveldesign.ParkingLotApp.model;
 
+import com.example.lowleveldesign.ParkingLotApp.model.enums.SpotStatus;
+import com.example.lowleveldesign.ParkingLotApp.model.enums.SpotType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,23 +10,23 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ParkingSpot {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer spotNumber;
-
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private SpotType spotType;
 
-    private Boolean isAvailable = true;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private SpotStatus status = SpotStatus.AVAILABLE;
 
     @ManyToOne
     @JoinColumn(name = "floor_id")
     private ParkingFloor floor;
-}
 
-enum SpotType {
-    COMPACT, LARGE, HANDICAPPED
+    @OneToOne(mappedBy = "spot")
+    private Ticket currentTicket;
 }
-

@@ -1,0 +1,15 @@
+🧩 Design Approach
+
+    Each entity will have its corresponding service:
+        ParkingLotService
+        ParkingFloorService
+        ParkingSpotService
+        VehicleService
+        TicketService
+        PaymentService
+
+    Each service:
+        Is annotated with @Service
+        Injects the corresponding repository
+        Has CRUD methods and business logic (to be added later)
+        Uses constructor injection (preferred for testability)

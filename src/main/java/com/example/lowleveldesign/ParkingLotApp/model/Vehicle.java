@@ -1,5 +1,6 @@
 package com.example.lowleveldesign.ParkingLotApp.model;
 
+import com.example.lowleveldesign.ParkingLotApp.model.enums.VehicleType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,6 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Vehicle {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,10 +17,5 @@ public class Vehicle {
     private String licensePlate;
 
     @Enumerated(EnumType.STRING)
-    private VehicleType type;
+    private VehicleType vehicleType;
 }
-
-enum VehicleType {
-    CAR, BIKE, TRUCK
-}
-
