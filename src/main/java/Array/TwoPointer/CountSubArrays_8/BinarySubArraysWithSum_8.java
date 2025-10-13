@@ -1,4 +1,4 @@
-package Array.TwoPointer;
+package Array.TwoPointer.CountSubArrays_8;
 
 public class BinarySubArraysWithSum_8 {
     //https://leetcode.com/problems/binary-subarrays-with-sum/description/
