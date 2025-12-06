@@ -1,11 +1,9 @@
 package Heap;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.PriorityQueue;
-import java.util.stream.Collectors;
 
-public class KthLargestInStream_12 {
+public class Stream_KthLargestInStream_12 {
     //https://leetcode.com/problems/kth-largest-element-in-a-stream/
     /*You are part of a university admissions office and need to keep track of the kth
     highest test score from applicants in real-time.
@@ -60,7 +58,7 @@ public class KthLargestInStream_12 {
 
     PriorityQueue<Integer> pq;
     int k;
-    public KthLargestInStream_12(int k, int[] nums) {
+    public Stream_KthLargestInStream_12(int k, int[] nums) {
         this.k=k;
         pq=new PriorityQueue<>();
         pq.addAll(Arrays.stream(nums)   //convert to int stream
