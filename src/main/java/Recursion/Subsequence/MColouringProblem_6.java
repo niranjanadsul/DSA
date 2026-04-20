@@ -4,6 +4,25 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class MColouringProblem_6 {
+    /*
+    * You are given an undirected graph consisting of V vertices and
+    *  E edges represented by a list edges[][], along with an integer m.
+    * Your task is to determine whether it is possible to color the graph using at most m
+    *  different colors such that no two adjacent vertices share the same color.
+    *  Return true if the graph can be colored with at most m colors, otherwise return false.
+
+    Note: The graph is indexed with 0-based indexing.
+
+    Examples:
+
+    Input: V = 4, edges[][] = [[0, 1], [1, 3], [2, 3], [3, 0], [0, 2]], m = 3
+    Output: true
+    Explanation: It is possible to color the given graph using 3 colors, for example, one of the possible ways vertices can be colored as follows:
+
+    Vertex 0: Color 1
+    Vertex 1: Color 2
+    Vertex 2: Color 2
+    Vertex 3: Color 3*/
     boolean graphColoring(int v, int[][] edges, int m) {
         int [][] adj = new int[v][v];
         for(int[] node: adj){
