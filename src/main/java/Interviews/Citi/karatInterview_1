@@ -1,3 +1,10 @@
+1. heap space and generations
+2. What is equals and hashcode methods and how they go hand in hand
+3. Examples of how error will occur if the hashcode method is not override
+4. Gave a java code and asked to point out the design mistake
+5. Coding problem with multiple logic modifications.
+
+
 /*
 We are building a program to manage a food delivery platform. The platform has multiple restaurants,
 customers place orders, and those orders move through statuses:

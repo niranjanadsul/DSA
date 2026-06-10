@@ -1,0 +1,33 @@
+1.  explain your current work
+    high level architecture of the system that you developed
+    what roles and responsibilities did you carry out on your own during the development
+2.  Gave a machine coding problem:
+    -There is a payment system that receives a payment record.
+    -The system has to store the payment in memory.
+    -the payment record contains(paymentId, senderID ,Amount and
+        payment status(SUCCESS,PENDING,FAILED) and payment timestamp)
+    -This payment system can receive
+        multiple payment records with the same paymentId, same/different status and timestamp.
+    -But the system should consider latest payment
+        (here the interviewers wanted me to identify a improvisation to handle
+         multiple retry records will be processed
+        if records are same or the latest records are non success, something like kafka event driven..bla bla bla)
+    -consider success payment in final summary
+    -Return success payment count for each user and total amount
+        if any invalid status other than success ignore that
+    -do not use any db / everything in memory
+    -Interviewers asked me to discuss the requirements and ask if I had any doubts
+    -Asked to explain the design before moving to implementation
+    -They also asked to take help of GenAI by designing better prompts
+
+3.  What is ConcurrentHashmap.
+    Normal HashMap and it's internal working
+    Difference between HashMap and ConcurrentHashMap
+    How ConcurrentHashMap works internally to handle concurrent access
+    Explain HashMap,ConcurrentHashMap, HashTable, their uses, internal working,
+        and differences in terms of thread safety, performance, and use cases.
+
+4.  Spring Dependency injection (what and how)
+5.  Spring AOP in detail
+    how AOP is implemented and how exactly AOP works internally in detail
+    Why is AOP needed and usecases
