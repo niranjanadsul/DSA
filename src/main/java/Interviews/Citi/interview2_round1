@@ -1,0 +1,38 @@
+ 1. My Intro
+2. If there are 3 RESt services that independent and there is a 4th REST service that gets request and this service will call those 3
+        independent services API and get response from them and then process this response and then give back this processed response.
+        How to call these 3 APIs in parallel to reduce time.
+ 3. Have you used Multithreading in your project? If yes, explain how you have used it.
+        I explained how I have used CompletableFuture and supplyAsync in my project to call multiple REST APIs in parallel and then combine the results.
+ 4. How is method entry, exit and overall logging done in Spring boot application?
+ 5. if a REST service is getting very huge request and you don't want that service to go down and it should
+        be able to handle the request and process it. How will you do that?
+        I explained load balancer and idempotency using redis and how it will help in this scenario.
+ 6. How to handle exception in Spring boot application? Specifically explain Custom exception handling
+ 7. what is caching, why it is done in microservices and how it is done in Spring boot application?
+ 8. How to find first non-repeated character in a string? (Example: niranjan, output: r)
+        Solve this completely only using Streams
+ 9. How to find all palindrome strings in a list of strings? (Example: raddar, level, java, niranjan, output: raddar, level)
+        Solve this using only Streams and internal method to check if a string is palindrome or not.
+        Here while implementing the code they asked what is difference between collect.(Collectors.toList()) and toList() method in streams.
+        I explained that toList() is a new method introduced in Java 16 and it returns an unmodifiable list,
+        while Collectors.toList() returns a modifiable list.
+ 10. How to find the employee with highest salary in each department from a list of employees? (Example: id, name, dept, salary)
+     Solve this using Streams when given a list of Employee object having name, id, dept and salary as attributes.
+     (You can create Employee class with these attributes)
+ 11. Solve above question using SQL query.
+ 12. If I want to design a Spring Boot Application with one REST API, how will you do that?
+        How to create spring project, what all classes will it have like RestController, service, JPARepository, Entity, etc.
+        and how will you implement it.
+        How will you call Service methods from RestController?
+        How is the Service dependency injected in RestController class?
+        Types of dependency injection in Spring Boot application and which one is used in your project.
+        When to use constructor injection and when to use setter injection in Spring Boot application?
+        What is Qualifier annotation in Spring Boot application. Why it is used and how it is used?
+ 13. Which DB have you used in your project and how will you connect it with Spring Boot application?
+        How will you configure postgresql connection in Spring Boot application?
+ 14. Have you implemented any Security related feature in your project? If yes, explain how you have implemented it.
+        I explained the OAuth 1.0a 3 legged authentication flow in my project and how I have implemented it using Spring Security.
+ 15. Have you used design patterns in your project? If yes, explain which design pattern you have used and
+        how you have implemented it.
+        Explain Adapter pattern, Builder pattern, and Strategy Pattern and how they are used in real time projects.
