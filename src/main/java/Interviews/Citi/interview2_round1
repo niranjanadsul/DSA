@@ -4,7 +4,7 @@
         How to call these 3 APIs in parallel to reduce time.
  3. Have you used Multithreading in your project? If yes, explain how you have used it.
         I explained how I have used CompletableFuture and supplyAsync in my project to call multiple REST APIs in parallel and then combine the results.
- 4. How is method entry, exit and overall logging done in Spring boot application?
+ 4. How is method entry, exit and overall logging done in Spring boot application? I explained Spring AOP
  5. if a REST service is getting very huge request and you don't want that service to go down and it should
         be able to handle the request and process it. How will you do that?
         I explained load balancer and idempotency using redis and how it will help in this scenario.
