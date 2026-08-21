@@ -15,5 +15,18 @@ public class MinUsingStream_5 {
         int max=ls.stream().max(Comparator.comparingInt(Integer::intValue)).get();
 
         System.out.println("Maximum value: " + max);
+
+        //min without comparator
+        double N_min=ls
+                                    .stream()
+                                    .mapToDouble(Integer::doubleValue)
+                                    .min().orElse(0.0);
+        System.out.println("Minimum value without comparator: " + N_min);
+
+        double N_max=ls
+                .stream()
+                .mapToDouble(Integer::doubleValue)
+                .max().orElse(0.0);
+        System.out.println("Maximum value without comparator: " + N_max);
     }
 }
