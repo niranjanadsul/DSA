@@ -52,4 +52,13 @@ public class Car {
                 new Car("Kia", "Red", 16000)
         );
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
