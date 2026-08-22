@@ -21,5 +21,12 @@ public class StreamGroupingBy_11 {
             System.out.println("Color: " + color);
             carsList.forEach(car -> System.out.println(car));
         });
+
+        //grouping and counting the number of cars in each group
+        System.out.println("Print grouping by color and counting the number of cars in each group**********");
+        Map<String, Long> colorToCarsCountMap = cars.stream().collect(Collectors.groupingBy(Car::getColor, Collectors.counting()));
+        colorToCarsCountMap.forEach((color, count) -> {
+            System.out.println("Color: " + color + ", Count: " + count);
+        });
     }
 }
