@@ -1,0 +1,21 @@
+We have millions of user activities happening in our application.
+ We need to basically perform some analytics on top of these activities.
+
+Analytics could include: find the top users in our platform, seggregating users by their region etc.,
+
+Consider an application like Instagram where there are so many users performing so many activities.
+
+Activity
+It could be any user operation that is performed in the system.
+ Examples of activities include: login, logout, like a post, follow someone, unfollow someone,
+ comment on a post, report a comment, report a post, unlike a post etc.,
+
+Context
+Our application is a very large and contains a lot of microservices which emits different types of activities.
+
+Requirement
+We need to collect all of these activites and perform different analytics on top of these activities.
+
+Priorities
+We want to find the top most users in our platform within a given time frame. Definition:
+The top most user is the one who has performed most no. of activities within that given timeframe.
