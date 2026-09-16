@@ -1,0 +1,39 @@
+import java.util.*;
+
+/*
+Given the root of a binary tree and an integer targetSum,
+ return the path if the tree has a root-to-leaf path such that
+  adding up all the values along the path equals targetSum.
+
+*/
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Hello, World!");
+      if()
+    }
+
+    public static boolean calTargetSum(Node root,int targetSum,List<String> path){
+      if(root == null)
+        return false;
+
+      if(root.left==null && root.right==null){
+        if(targetSum==root.val){
+          path.add(root.val);
+          return true;
+        }
+        return false;
+      }
+      boolean leftSum=calTargetSum(root.left,targetSum-root.val)
+      if(leftSum)
+        path.add(root.val);
+        return true;
+      }
+      boolean rightSum=calTargetSum(root.right,targetSum-root.val);
+      if(rightSum){
+        path.add(root.val);
+        return true;
+      }
+      return false;
+    }
+}
